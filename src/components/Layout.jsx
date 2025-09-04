@@ -3,12 +3,11 @@ import NavBar from './NavBar';
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       <NavBar />
-      <main className="pt-6 px-4">
+      <main className="pt-16">
         <Outlet />
       </main>
     </div>
   );
 }
- 
