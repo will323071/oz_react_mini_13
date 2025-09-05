@@ -8,7 +8,11 @@ export const useFetch = (url) => {
     const fetchData = async () => {
       try {
         const res = await fetch(url, {
-          headers: { Authorization: `Bearer ${API_KEY}` },
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${API_KEY}`,
+          },
         });
         const json = await res.json();
         setData(json);

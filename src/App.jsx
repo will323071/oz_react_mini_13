@@ -15,6 +15,7 @@ const API_URL = 'https://api.themoviedb.org/3/movie/popular?language=ko&page=1';
 
 export default function App() {
   const movieData = useFetch(API_URL);
+  console.log(movieData)
 
   return (
     <div className="max-w-[1080px] mx-auto p-4">

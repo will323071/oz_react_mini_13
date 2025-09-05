@@ -4,7 +4,7 @@ export default function MovieCard({ movie }) {
   return (
     <div className="rounded-lg overflow-hidden border shadow hover:scale-105 transition-transform">
       <img
-        src={`${BASE_IMG_URL}${movie.backdrop_path}`}
+        src={`${BASE_IMG_URL}${movie.poster_path}`}
         alt={movie.title}
         className="w-full h-[240px] object-cover"
       />

@@ -6,7 +6,7 @@ export default function MovieDetail() {
   const { id } = useParams();
   const detail = useFetch(`https://api.themoviedb.org/3/movie/${id}?language=ko`);
 
-  if (!detail || !detail.backdrop_path) return <div>Loading...</div>;
+  if (!detail || !detail.poster_path) return <div>Loading...</div>;
 
   return (
     <div className="max-w-[1080px] mx-auto p-5 grid grid-cols-8 grid-rows-5 gap-3">
