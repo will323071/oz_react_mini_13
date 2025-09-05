@@ -8,8 +8,8 @@ import 'swiper/css/pagination';
 import { useFetch } from './hooks/useFetch';
 
 // 환경변수 사용
-export const BASE_IMG_URL = import.meta.env.VITE_BASE_IMG_URL;
 export const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+export const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const API_URL = 'https://api.themoviedb.org/3/movie/popular?language=ko&page=1';
 
@@ -36,7 +36,7 @@ export default function App() {
       </Swiper>
 
       <h1 className="text-center text-3xl font-bold bg-red-300 p-3 my-4">이번 주 인기 영화</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {movieData.results?.filter((movie) => !movie.adult).map((movie) => (
           <Link key={movie.id} to={`/details/${movie.id}`}>
             <MovieCard movie={movie} />

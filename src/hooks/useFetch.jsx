@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { API_KEY } from '@/App';
+import { API_KEY } from '../App';
 
 export const useFetch = (url) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {

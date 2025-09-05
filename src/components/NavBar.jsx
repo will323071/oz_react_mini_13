@@ -14,7 +14,7 @@ export default function NavBar() {
         />
         <div className="flex gap-2">
           <button className="rounded-full bg-indigo-500 px-3 py-1">Login</button>
-          <button className="rounded-full bg-indigo-500 px-3 py-1">JoinUs</button>
+          <button className="rounded-full bg-indigo-500 px-3 py-1">Sign Up</button>
         </div>
       </div>
     </nav>
