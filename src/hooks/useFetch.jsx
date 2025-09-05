@@ -1,14 +1,28 @@
+
 import { useState, useEffect } from "react";
 import { API_KEY } from "../App";
 
 export function useFetch(url) {
   const [data, setData] = useState([]);
 
+import { useState, useEffect } from 'react';
+import { API_KEY } from '../App';
+
+export const useFetch = (url) => {
+  const [data, setData] = useState({ results: [] });
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch(url, {
+
           headers: {
+
+          method: "GET",
+          headers: {
+            accept: "application/json",
+
             Authorization: `Bearer ${API_KEY}`,
           },
         });
@@ -22,4 +36,8 @@ export function useFetch(url) {
   }, [url]);
 
   return data;
+
 }
+
+};
+
