@@ -4,12 +4,12 @@ import useDebounce from "../hooks/useDebounce";
 
 export default function NavBar() {
   const [search, setSearch] = useState("");
-  const debouncedSearch = useDebounce(search, 600); // 0.6초 지연
+  const debouncedSearch = useDebounce(search, 600);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (debouncedSearch.trim()) {
-      navigate(`/?query=${debouncedSearch}`);
+      navigate(`/search?query=${debouncedSearch}`); // ✅ Search 페이지로 이동
     }
   }, [debouncedSearch, navigate]);
 
@@ -26,10 +26,6 @@ export default function NavBar() {
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1 mx-4 border-b border-gray-300 bg-black text-white px-2"
         />
-        <div className="flex gap-2">
-          <button className="rounded-full bg-indigo-500 px-3 py-1">Login</button>
-          <button className="rounded-full bg-indigo-500 px-3 py-1">Sign Up</button>
-        </div>
       </div>
     </nav>
   );
