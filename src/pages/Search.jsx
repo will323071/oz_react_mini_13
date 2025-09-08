@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import MovieCard from "../components/MovieCard";
 
@@ -22,7 +22,9 @@ export default function Search() {
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {movieData.results.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <Link key={movie.id} to={`/details/${movie.id}`}>
+            <MovieCard movie={movie} />
+          </Link>
         ))}
       </div>
     </div>

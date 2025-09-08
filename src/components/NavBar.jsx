@@ -9,9 +9,9 @@ export default function NavBar() {
 
   useEffect(() => {
     if (debouncedSearch.trim()) {
-      navigate(`/search?query=${debouncedSearch}`); // ✅ Search 페이지로 이동
+      navigate(`/search?query=${debouncedSearch}`); 
     }
-  }, [debouncedSearch, navigate]);
+  }, [debouncedSearch]);
 
   return (
     <nav className="fixed top-0 w-full bg-black text-white shadow-md z-10">
